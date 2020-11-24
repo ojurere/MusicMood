@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MusicMood</string>
+    <string name="mood_question">How are you feeling?</string>
+    <string name="mood_answer_happy">Great!</string>
+    <string name="mood_answer_hopeful">I\'m OK, could be better</string>
+    <string name="mood_answer_mad">Kinda salty</string>
+    <string name="mood_answer_sad">Definitely in my feelings</string>
+    <string name="mood_go">GO</string>
+
 </resources>
