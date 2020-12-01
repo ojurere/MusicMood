@@ -79,7 +79,7 @@
         android:layout_width="70dp"
         android:layout_height="49dp"
         android:text="@string/mood_go"
-        android:onClick="answerButtonClick"
+        android:onClick="getMood"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
