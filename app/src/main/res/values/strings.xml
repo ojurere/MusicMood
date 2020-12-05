@@ -6,7 +6,7 @@
     <string name="mood_answer_mad">Kinda salty</string>
     <string name="mood_answer_sad">Definitely in my feelings</string>
     <string name="mood_go">GO</string>
-    <string name="playlist_title">(Suggested playlist goes here.)</string>
+    <string name="playlist_title">(Suggested playlist name goes here.)</string>
 
 
 </resources>
