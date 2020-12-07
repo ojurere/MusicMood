@@ -54,35 +54,5 @@ public class Song {
         System.out.println(songName);
     }*/
 
-    private void writeToInternalFile(Context ctx) throws IOException {
-        FileOutputStream outputStream = ctx.openFileOutput("songnamesfile", Context.MODE_PRIVATE);
-        PrintWriter writer = new PrintWriter(outputStream);
-        writer.println("Dynamite");
-        writer.println("Good Thing");
-        writer.println("Into the Sun");
-        writer.close();
-
-    }
-
-    private String readFromInternalFile(Context ctx) throws IOException {
-        FileInputStream inputStream = ctx.openFileInput("songnamesfile");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
-        try {
-            String line;
-            StringBuilder stringBuilder = new StringBuilder();
-
-            while ((line = reader.readLine()) != null) {
-                stringBuilder.append(line);
-                stringBuilder.append('\n');
-            }
-
-            return stringBuilder.toString();
-        }
-        finally {
-            reader.close();
-        }
-
-    }
 
 }
