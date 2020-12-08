@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         btNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                String message = "This is a notification.";
+                String message = "MusicMood is designed to match your energy, providing the vibes and playlists that you need!";
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(
                         MainActivity.this
                 )
