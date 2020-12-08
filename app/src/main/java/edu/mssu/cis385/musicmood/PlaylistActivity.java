@@ -48,11 +48,18 @@ public class PlaylistActivity extends AppCompatActivity {
     public void WriteBtn(View v) {
         // add-write text into file
         try {
-            FileOutputStream fileout=openFileOutput("mytextfile.txt", MODE_PRIVATE);
+            FileOutputStream fileout=openFileOutput("happyMoodFile.txt", MODE_PRIVATE);
             OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
-            outputWriter.write("Dynamite by BTS" + "\n");
-            outputWriter.write(getString(R.string.app_name)+ "\n" + getString(R.string.mood_question));
-
+            outputWriter.write(getString(R.string.one)+ "\n" +
+                                getString(R.string.two)+ "\n" +
+                                getString(R.string.three)+ "\n" +
+                                getString(R.string.four)+ "\n" +
+                                getString(R.string.five)+ "\n" +
+                                getString(R.string.six)+ "\n" +
+                                getString(R.string.seven)+ "\n" +
+                                getString(R.string.eight)+ "\n" +
+                                getString(R.string.nine)+ "\n" +
+                                getString(R.string.ten)+ "\n" );
             outputWriter.close();
 
             //display file saved message
@@ -68,7 +75,7 @@ public class PlaylistActivity extends AppCompatActivity {
     public void ReadBtn(View v) {
         //reading text from file
         try {
-            FileInputStream fileIn=openFileInput("mytextfile.txt");
+            FileInputStream fileIn=openFileInput("happyMoodFile.txt");
             InputStreamReader InputRead= new InputStreamReader(fileIn);
 
             char[] inputBuffer= new char[READ_BLOCK_SIZE];

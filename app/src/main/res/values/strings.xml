@@ -7,6 +7,17 @@
     <string name="mood_answer_sad">Definitely in my feelings</string>
     <string name="mood_go">GO</string>
     <string name="playlist_title">(Suggested playlist name goes here.)</string>
+    <string name="one">Dynamite by BTS</string>
+    <string name="two">Good Thing by Zedd and Kehlani</string>
+    <string name="three">Into the Sun by Johnny 2 Phones</string>
+    <string name="four">Little Bitty Pretty One by Thurston Harris</string>
+    <string name="five">Lovely Day by Bill Withers</string>
+    <string name="six">Rhythm of Love by Plain White Ts</string>
+    <string name="seven">Staring at the Sun by Post Malone ft. SZA</string>
+    <string name="eight">LOVE by Jhene Aiko</string>
+    <string name="nine">Jerusalema by Master KG ft. Burna Boy and Nomcebo Zikode</string>
+    <string name="ten">Drip like ME by Kenndog</string>
+
 
 
 </resources>

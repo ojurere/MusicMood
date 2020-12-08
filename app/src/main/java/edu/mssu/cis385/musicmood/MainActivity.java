@@ -16,12 +16,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button happyButton = findViewById(R.id.answerButtonHappy);
+        happyButton.setOnClickListener(mHappyButtonClickListener);
+
+        Button sadButton = findViewById(R.id.answerButtonHappy);
+        happyButton.setOnClickListener(mHappyButtonClickListener);
+
     }
 
-    public void getMood(View view) {
-        // Do something in response to button
-        /** Called when the user taps the GO button */
-            Intent intent = new Intent(this, PlaylistActivity.class);
+    private final View.OnClickListener mHappyButtonClickListener = new View.OnClickListener() {
+        public void onClick(View v) {
+            // Do something in response to button
+            /** Called when the user taps the GO button */
+            Intent intent = new Intent(MainActivity.this, PlaylistActivity.class);
             startActivity(intent);
         }
-    }
+    };
+}
