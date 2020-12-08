@@ -4,26 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/happyColor"
-
-    >
+    android:background="@color/madColor">
 
     <TextView
         android:id="@+id/playlistTitle"
-        android:layout_width="278dp"
-        android:layout_height="58dp"
-        android:text="@string/happy_playlist_title"
+        android:textColor="#fff"
+        android:layout_width="202dp"
+        android:layout_height="52dp"
+        android:text="@string/mad_playlist_title"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.646"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.126" />
 
+
     <Button
         android:id="@+id/button1"
-        android:background="@color/happyButtonColor"
+        android:background="@color/madButtonColor"
+        android:textColor="#fff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="WriteBtn"
@@ -37,7 +38,8 @@
 
     <Button
         android:id="@+id/button2"
-        android:background="@color/happyButtonColor"
+        android:background="@color/madButtonColor"
+        android:textColor="#fff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="ReadBtn"
@@ -50,8 +52,8 @@
         app:layout_constraintVertical_bias="0.891" />
 
     <ScrollView
-        android:layout_width="337dp"
-        android:layout_height="392dp"
+        android:layout_width="330dp"
+        android:layout_height="304dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,12 +61,14 @@
         app:layout_constraintVertical_bias="0.574">
 
         <TextView
-            android:id="@+id/itemList"
+            android:id="@+id/madItemList"
+            android:textColor="#fff"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:scrollbars="vertical"
-            android:textSize="30sp"
+            android:textSize="25sp"
             tools:text="LIST" />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

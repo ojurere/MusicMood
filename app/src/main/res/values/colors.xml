@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimary">#999999</color>
+    <color name="colorPrimaryDark">#2B2D2F</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="backgroundColor">#FCFCFC</color>
+    <color name="textColor">#000000</color>
+
+    <color name="happyColor">#FFEA6C</color>
+    <color name="happyButtonColor">#ff9a55</color>
+    <color name="hopefulColor">#1AAF91</color>
+    <color name="hopefulButtonColor">#57CF9B</color>
+    <color name="madColor">#660000</color>
+    <color name="madButtonColor">#2F0909</color>
+    <color name="sadColor">#2c345c</color>
+    <color name="sadButtonColor">#0c0d49</color>
+
 </resources>

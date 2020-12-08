@@ -1,27 +1,20 @@
 package edu.mssu.cis385.musicmood;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 
 
 //does everything else. when playlist opens, it displays the songs
-public class PlaylistActivity extends AppCompatActivity {
+public class MadActivity extends AppCompatActivity {
 
     TextView userPlaylist;
     private TextView mItemListTextView;
@@ -32,13 +25,13 @@ public class PlaylistActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_playlist);
+        setContentView(R.layout.activity_mad);
 
-        mItemListTextView = findViewById(R.id.itemList);
+        mItemListTextView = findViewById(R.id.madItemList);
 
         mSongList = new Playlist(this);
 
-        userPlaylist=(TextView)findViewById(R.id.itemList);
+        userPlaylist=(TextView)findViewById(R.id.madItemList);
 
         displayList();
 
@@ -48,18 +41,18 @@ public class PlaylistActivity extends AppCompatActivity {
     public void WriteBtn(View v) {
         // add-write text into file
         try {
-            FileOutputStream fileout=openFileOutput("happyMoodFile.txt", MODE_PRIVATE);
+            FileOutputStream fileout=openFileOutput("madMoodFile.txt", MODE_PRIVATE);
             OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
-            outputWriter.write(getString(R.string.one)+ "\n" +
-                                getString(R.string.two)+ "\n" +
-                                getString(R.string.three)+ "\n" +
-                                getString(R.string.four)+ "\n" +
-                                getString(R.string.five)+ "\n" +
-                                getString(R.string.six)+ "\n" +
-                                getString(R.string.seven)+ "\n" +
-                                getString(R.string.eight)+ "\n" +
-                                getString(R.string.nine)+ "\n" +
-                                getString(R.string.ten)+ "\n" );
+            outputWriter.write(getString(R.string.twenty_one)+ "\n" +
+                                getString(R.string.twenty_two)+ "\n" +
+                                getString(R.string.twenty_three)+ "\n" +
+                                getString(R.string.twenty_four)+ "\n" +
+                                getString(R.string.twenty_five)+ "\n" +
+                                getString(R.string.twenty_six)+ "\n" +
+                                getString(R.string.twenty_seven)+ "\n" +
+                                getString(R.string.twenty_eight)+ "\n" +
+                                getString(R.string.twenty_nine)+ "\n" +
+                                getString(R.string.thirty)+ "\n" );
             outputWriter.close();
 
             //display file saved message
@@ -75,7 +68,7 @@ public class PlaylistActivity extends AppCompatActivity {
     public void ReadBtn(View v) {
         //reading text from file
         try {
-            FileInputStream fileIn=openFileInput("happyMoodFile.txt");
+            FileInputStream fileIn=openFileInput("madMoodFile.txt");
             InputStreamReader InputRead= new InputStreamReader(fileIn);
 
             char[] inputBuffer= new char[READ_BLOCK_SIZE];

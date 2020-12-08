@@ -5,8 +5,14 @@
     <string name="mood_answer_hopeful">I\'m OK, could be better</string>
     <string name="mood_answer_mad">Kinda salty</string>
     <string name="mood_answer_sad">Definitely in my feelings</string>
-    <string name="mood_go">GO</string>
-    <string name="playlist_title">(Suggested playlist name goes here.)</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="load_button">LOAD PLAYLIST</string>
+    <string name="view_button">VIEW PLAYLIST</string>
+    <string name="happy_playlist_title">HAPPY MOOD</string>
+    <string name="hopeful_playlist_title">HOPEFUL MOOD</string>
+    <string name="mad_playlist_title">MAD MOOD</string>
+    <string name="sad_playlist_title">SAD MOOD</string>
+
     <string name="one">Dynamite by BTS</string>
     <string name="two">Good Thing by Zedd and Kehlani</string>
     <string name="three">Into the Sun by Johnny 2 Phones</string>
@@ -18,6 +24,37 @@
     <string name="nine">Jerusalema by Master KG ft. Burna Boy and Nomcebo Zikode</string>
     <string name="ten">Drip like ME by Kenndog</string>
 
+    <string name="eleven">Yesterday by The Beatles</string>
+    <string name="twelve">Butterflies by Queen Naija</string>
+    <string name="thirteen">Landslide by Fleetwood Mac</string>
+    <string name="fourteen">Dreams by Fleetwood Mac</string>
+    <string name="fifteen">pov by Ariana Grande</string>
+    <string name="sixteen">new light by Avenue Beat</string>
+    <string name="seventeen">Your Love by Nicki Minaj</string>
+    <string name="eighteen">I Was Here by Beyonce</string>
+    <string name="nineteen">The Only Exception by Paramore</string>
+    <string name="twenty">Sunday Morning by Maroon 5</string>
 
+    <string name="twenty_one">F2020 by Avenue Beat</string>
+    <string name="twenty_two">Death of a Bachelor by Panic! At the Disco</string>
+    <string name="twenty_three">shut up by Ariana Grande</string>
+    <string name="twenty_four">my ex\'s best friend by Machine Gun Kelly and Blackbear</string>
+    <string name="twenty_five">Hardest to Love by The Weeknd</string>
+    <string name="twenty_six">Hate LA by Rudi</string>
+    <string name="twenty_seven">Busy Boy by Chloe x Halle</string>
+    <string name="twenty_eight">Hard Times by Paramore</string>
+    <string name="twenty_nine">A Thousand Bad Times by Post Malone</string>
+    <string name="thirty">I Write Sins Not Tragedies by Panic! At the Disco</string>
+
+    <string name="thirty_one">Lonely by Justin Bieber and benny blanco</string>
+    <string name="thirty_two">Take a Bow by Rihanna</string>
+    <string name="thirty_three">Orbit by Nao</string>
+    <string name="thirty_four">SLOW DANCING IN THE DARK by Joji</string>
+    <string name="thirty_five">Snow on tha Bluff by j. Cole</string>
+    <string name="thirty_six">Smile by Rudi</string>
+    <string name="thirty_seven">Love Goes by Sam Smith and Labrinth</string>
+    <string name="thirty_eight">Summer Games by Drake</string>
+    <string name="thirty_nine">Mirror by Madison Ryann Ward</string>
+    <string name="forty">I\'ll Never Love Again by Lady Gaga and Bradley Cooper</string>
 
 </resources>
