@@ -12,6 +12,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,16 +20,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private Button btnToggleDark;
     Button btNotification;
     public static final String EXTRA_MESSAGE = "edu.mssu.cis385.MESSAGE";
+    private boolean mDarkTheme;
+    private SharedPreferences mSharedPrefs;
 
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        mDarkTheme = mSharedPrefs.getBoolean(SettingsFragment.PREFERENCE_THEME, false);
+        if (mDarkTheme) {
+            setTheme(R.style.DarkTheme);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -76,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -95,7 +106,16 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        // If theme changed, recreate the activity so theme is applied
+        boolean darkTheme = mSharedPrefs.getBoolean(SettingsFragment.PREFERENCE_THEME, false);
+        if (darkTheme != mDarkTheme) {
+            recreate();
+        }
+    }
 
     private final View.OnClickListener mHappyButtonClickListener = new View.OnClickListener() {
         public void onClick(View v) {
