@@ -3,14 +3,18 @@ package edu.mssu.cis385.musicmood;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.annotation.SuppressLint;
+import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
@@ -27,6 +31,10 @@ public class MainActivity extends AppCompatActivity{
     public static final String EXTRA_MESSAGE = "edu.mssu.cis385.MESSAGE";
     private boolean mDarkTheme;
     private SharedPreferences mSharedPrefs;
+    private final String CHANNEL_ID = "This app gives you a playlist that matches your energy!";
+    private final int NOTIFICATION_ID = 0;
+
+
 
 
     @SuppressLint("SetTextI18n")
@@ -53,39 +61,48 @@ public class MainActivity extends AppCompatActivity{
         Button sadButton = findViewById(R.id.answerButtonSad);
         sadButton.setOnClickListener(mSadButtonClickListener);
 
+        createTimerNotificationChannel();
+
         btNotification = findViewById(R.id.bt_notification);
 
         btNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                String message = "MusicMood is designed to match your energy, providing the vibes and playlists that you need!";
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(
-                        MainActivity.this
-                )
-                        .setSmallIcon(R.drawable.ic_message)
-                        .setContentTitle("New Notification")
-                        .setContentText(message)
-                        .setAutoCancel(true);
-
-                Intent intent = new Intent(MainActivity.this,
-                        NotificationActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.putExtra("message",message);
-
-                PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this,
-                        0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
-                builder.setContentIntent(pendingIntent);
-
-                NotificationManager notificationManager = (NotificationManager)getSystemService(
-                        Context.NOTIFICATION_SERVICE
-                );
-                notificationManager.notify(0,builder.build());
+                createTimerNotification(CHANNEL_ID);
             }
         });
+    }
+    private void createTimerNotification(String text) {
 
+        // Create notification with various properties
+        Notification notification = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
+                .setSmallIcon(android.R.drawable.ic_dialog_info)
+                .setContentTitle(getString(R.string.app_name))
+                .setContentText(text)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .build();
 
+        // Get compatibility NotificationManager
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
+
+        // Post notification using ID.  If same ID, this notification replaces previous one
+        notificationManager.notify(NOTIFICATION_ID, notification);
     }
 
+
+    private void createTimerNotificationChannel() {
+        if (Build.VERSION.SDK_INT < 26) return;
+
+        CharSequence name = getString(R.string.channel_name);
+        String description = getString(R.string.channel_description);
+        int importance = NotificationManager.IMPORTANCE_HIGH;
+        NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+        channel.setDescription(description);
+
+        // Register channel with system
+        NotificationManager notificationManager = getSystemService(NotificationManager.class);
+        notificationManager.createNotificationChannel(channel);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
